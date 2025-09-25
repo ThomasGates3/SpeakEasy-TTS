@@ -89,6 +89,8 @@ This project demonstrates a **modern serverless text-to-speech converter** that 
 
 ### Architecture Overview
 
+
+[![SpeakEasy Architecture][aws-architecture]](images/architecture.png)
 ```
 ┌─────────────────┐    ┌──────────────────┐    ┌─────────────────┐
 │   Frontend      │───▶│   API Gateway    │───▶│   AWS Lambda    │
