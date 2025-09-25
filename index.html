@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SpeakEasy - AWS Text-to-Speech</title>
+    <link rel="stylesheet" href="styles.css"> 
+</head>
+<body>
+    <div class="container">
+        <h1>SpeakEasy</h1>
+        <textarea id="textInput" placeholder="Enter text to convert to speech..."></textarea>
+        <button onclick="convertTextToSpeech()">Convert to Speech</button>
+        <div id="status"></div>
+        <audio id="audioPlayer" controls></audio>
+    </div>
+
+    <script>
+        const apiGatewayEndpoint = "https://eh35wmc9oi.execute-api.us-east-2.amazonaws.com/default"; //API Gateway Invoke URL
+
+        async function convertTextToSpeech() {
+            const textInput = document.getElementById('textInput').value;
+            const statusDiv = document.getElementById('status');
+            const audioPlayer = document.getElementById('audioPlayer');
+
+            statusDiv.textContent = 'Converting...';
+            audioPlayer.style.display = 'none'; // Hide player while converting
+            audioPlayer.src = ''; // Clear previous audio
+
+            if (!textInput.trim()) {
+                statusDiv.textContent = 'Please enter some text.';
+                return;
+            }
+
+            try {
+                const response = await fetch(apiGatewayEndpoint, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json';
+                        'Access-Control-Allow-Origin': '*'
+                    },
+                    body: JSON.stringify({ text: textInput })
+                });
+
+                const data = await response.json();
+
+                if (response.ok) {
+                    statusDiv.textContent = 'Conversion successful! Playing audio...';
+                    audioPlayer.src = data.audioUrl;
+                    audioPlayer.style.display = 'block';
+                    audioPlayer.play();
+                } else {
+                    statusDiv.textContent = `Error: ${data.message || 'Unknown error'}`;
+                }
+            } catch (error) {
+                console.error('Fetch error:', error);
+                statusDiv.textContent = `An error occurred: ${error.message}`;
+            }
+        }
+    </script>
+</body>
+</html>

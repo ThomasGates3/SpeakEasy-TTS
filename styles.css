@@ -1,0 +1,93 @@
+/*
+ * SpeakEasy - Minimalistic Dark Theme
+ * Styles for the AWS Text-to-Speech Converter
+ */
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #1a1a1a; /* Deep dark background */
+    color: #e0e0e0; /* Light text color */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh; /* Full viewport height */
+    overflow: hidden; /* Prevent scrollbars if content slightly exceeds viewport */
+}
+
+.container {
+    max-width: 650px;
+    width: 90%; /* Responsive width */
+    background-color: #282828; /* Slightly lighter dark for container */
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5); /* Soft, dark shadow */
+    text-align: center;
+}
+
+h1 {
+    color: #4CAF50; /* A pleasant green for the title */
+    margin-bottom: 30px;
+    font-size: 2.5em;
+    letter-spacing: 1px;
+}
+
+textarea {
+    width: calc(100% - 20px); /* Adjust for padding, effective width within container */
+    padding: 15px;
+    margin-bottom: 20px;
+    border: 1px solid #555; /* Darker border */
+    border-radius: 5px;
+    box-sizing: border-box; /* Include padding/border in element's total width/height */
+    resize: vertical; /* Allow vertical resizing only */
+    min-height: 120px;
+    background-color: #3a3a3a; /* Input background */
+    color: #f0f0f0; /* Input text color */
+    font-size: 1.1em;
+    outline: none; /* Remove default focus outline */
+    transition: border-color 0.3s ease, box-shadow 0.3s ease; /* Smooth transition for focus */
+}
+
+textarea:focus {
+    border-color: #4CAF50; /* Highlight border on focus */
+    box-shadow: 0 0 8px rgba(76, 175, 80, 0.4); /* Glow effect on focus */
+}
+
+button {
+    display: block; /* Take full width */
+    width: calc(100% - 20px); /* Adjust for container padding */
+    padding: 15px;
+    background-color: #4CAF50; /* Green button */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1.2em;
+    font-weight: bold;
+    transition: background-color 0.3s ease, transform 0.2s ease; /* Smooth hover effects */
+    margin-bottom: 20px;
+}
+
+button:hover {
+    background-color: #45a049; /* Darker green on hover */
+    transform: translateY(-2px); /* Slight lift effect */
+}
+
+button:active {
+    transform: translateY(0); /* Return to original position on click */
+}
+
+#status {
+    margin-top: 20px;
+    font-size: 1.1em;
+    color: #888; /* Muted status text */
+}
+
+#audioPlayer {
+    margin-top: 25px;
+    width: 100%;
+    display: none; /* Hidden until audio is ready */
+    background-color: #333; /* Dark background for player */
+    border-radius: 5px;
+}
