@@ -90,7 +90,7 @@ This project demonstrates a **modern serverless text-to-speech converter** that 
 ### Architecture Overview
 
 
-[![SpeakEasy Screenshot][aws-architecture]](images/speakeasy-architecture.png)
+[![SpeakEasy Architecture][aws-architecture]](images/speakeasy-architecture.png)
 
 ```
 ┌─────────────────┐    ┌──────────────────┐    ┌─────────────────┐
@@ -331,7 +331,7 @@ Project Link: [https://github.com/ThomasGates3/SpeakEasy-TTS](https://github.com
 [linkedin-url]: https://linkedin.com/in/thomas-gates-iii
 
 [product-screenshot]: images/speakeasy-screenshot.png
-[aws-architecture] : images/speakesy-architecture.png
+[aws-architecture]: images/speakesy-architecture.png
 [HTML5]: https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white
 [HTML5-url]: https://developer.mozilla.org/en-US/docs/Web/HTML
 [CSS3]: https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white
