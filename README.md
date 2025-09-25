@@ -90,7 +90,7 @@ This project demonstrates a **modern serverless text-to-speech converter** that 
 ### Architecture Overview
 
 
-[![SpeakEasy Screenshot][product-screenshot]](images/speakeasy-architecture.png)
+[![SpeakEasy Screenshot][aws-architecture]](images/speakeasy-architecture.png)
 
 ```
 ┌─────────────────┐    ┌──────────────────┐    ┌─────────────────┐
